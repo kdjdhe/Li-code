@@ -15,6 +15,7 @@ int main() {
         else
         {
             printf("密钥安全，密码设置成功\n");
+            break;
         }
         
     }
