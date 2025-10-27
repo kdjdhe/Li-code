@@ -2,33 +2,17 @@
 //qwertyuiop43796@outlook.com
 //李小鹏
 #include <stdio.h>
-int main() {
-    int value;
-    scanf("%d", &value); 
-    if (value < 0 || value > 100)
+int main()
+{
+    int a,b,c,i;
+    for ( i = 100; i <= 999; i++)
     {
-        printf("拜托0-100");
-    }
-    else{
-        if (value >= 90)
+        a = i / 100;
+        b = (i/10)%10;
+        c = i % 10;
+        if (a*a*a + b*b*b + c*c*c == i)
         {
-            printf("A\n");
-        }
-        else if (value >= 80)
-        {
-            printf("B\n");
-        }
-        else if (value >= 70)
-        {
-            printf("C\n");
-        }
-        else if (value >= 60)
-        {
-            printf("D\n");
-        }
-        else
-        {
-            printf("E\n");
+            printf("%d\n", i);
         }
         
     }
