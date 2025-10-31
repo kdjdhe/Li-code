@@ -3,27 +3,30 @@
 //李小鹏
 #include <stdio.h>
 int main()
-{   int i = 1;
-    int j;
-    scanf("%d", &j);
-    while (j < 1 || j > 50)
+{   int i = 2;
+    int num;
+    scanf("%d", &num);
+    while (num >50 || num <1)
     {
         return 1;
     }
-    while (i <= 50 || i >= 1)
+    while (num == 1)
     {
+        printf("密钥不安全，请重新输入\n");
+        return 0;
+    }
+    while (i * i <= num)
+    {
+        if (num % i == 0)
+        {
+            printf("密钥不安全，请重新输入") ;
+            return 0 ;
+        }
         i++;
-        if (j%i == 0)
-        {
-            printf("密钥不安全，请重新输入\n");
-            break;
-        }
-        else
-        {
-            printf("密钥安全，密码设置成功\n");
-            break;
-        }
         
     }
+    printf ("密钥安全，密码设置成功");
+    
+    
     return 0;
 }
