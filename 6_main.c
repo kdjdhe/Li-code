@@ -2,32 +2,29 @@
 //qwertyuiop43796@outlook.com
 //李小鹏
 #include <stdio.h>
+int sum_array(int arr[], int n) {
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += arr[i];
+    }
+    return sum;
+}
+int product_array(int arr[], int n) {
+    int product = 1;
+    for (int i = 0; i < n; i++) {
+        product *= arr[i];
+    }
+    return product;
+}
+
 int main() {
-    int i = 0;
-    int j = 0; 
-    int n = 0; 
-    int a = 0;
-    int arr[5] = {0};
-    while (i < 5)
-    {
-        scanf("%d", &j);
-        if (j % 2 == 0)
-        {
-            arr[i] = j;
-            i++;
-        }
-        
+    int arr[5];
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
     }
-    for (int k = 0; k < 5; k++)
-    {
-        if (a == 1)
-        {
-            printf(" ");
-        }
-        printf("%d", arr[k]);
-        a = 1;
-    }
-    
-    
+    int sum_result = sum_array(arr, 5);
+    int product_result = product_array(arr, 5);
+    printf("%d %d\n", sum_result, product_result);
     return 0;
 }
+
