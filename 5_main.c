@@ -4,8 +4,8 @@
 #include <stdio.h>
 int sum(int a1,int an,int step){
     int n =(an - a1 )/step + 1;
-    return n * (a1 + an ) / 2;
-
+    int temp = n * (a1 + an ) / 2;
+    return temp ;
 }
 int main(){
     int  result = sum(1，100,1);
