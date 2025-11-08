@@ -2,31 +2,26 @@
 //qwertyuiop43796@outlook.com
 //李小鹏
 #include <stdio.h>
-int main()
-{   int i = 2;
-    int num;
-    scanf("%d", &num);
-    while (num >50 || num <1)
-    {
-        return 1;
-    }
-    while (num == 1)
-    {
-        printf("密钥不安全，请重新输入\n");
-        return 0;
-    }
-    while (i * i <= num)
-    {
-        if (num % i == 0)
-        {
-            printf("密钥不安全，请重新输入") ;
-            return 0 ;
+void bubble_sort(int arr[], int n) {
+    for (int i = 0; i < n-1; i++) {
+        for (int j = 0; j < n-i-1; j++) {
+            if (arr[j] > arr[j+1]) {
+                int temp = arr[j];
+                arr[j] = arr[j+1];
+                arr[j+1] = temp;
+            }
         }
-        i++;
-        
     }
-    printf ("密钥安全，密码设置成功");
-    
-    
+}
+int main() {
+    int arr[10];
+    for (int i = 0; i < 10; i++) {
+        scanf("%d", &arr[i]);
+    }
+    int n = sizeof(arr)/sizeof(arr[0]);
+    bubble_sort(arr, n);
+    for (int i=0; i < n; i++)
+        printf("%d ", arr[i]);
+    printf("\n");
     return 0;
 }
