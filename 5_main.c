@@ -2,22 +2,13 @@
 //qwertyuiop43796@outlook.com
 //李小鹏
 #include <stdio.h>
-int main() {
-    int arr[5];
-    for (int i = 0; i < 4; i++)
-    {
-        scanf("%d", &arr[i]);
-    }
-    arr[4] = arr[0] + arr[1] + arr[2] + arr[3];
-    for (int i = 0; i < 5; i++)
-    {if (i < 5)
-    {
-        printf("%d ", arr[i]);
-    }
-    else if (i == 5)
-    {
-        printf("%d",arr[i]);
-    }
-    }
-    return 0;
+long long sum(int a1,int an,int step){
+    int n =(an - a1 )/step + 1;
+    return (long long)n * (a1 + an ) / 2;
+
+}
+int main(){
+    long long result = sum(1，100,1);
+    printf("%d",result);
+    return 0 ;
 }
