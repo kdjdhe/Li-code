@@ -3,34 +3,30 @@
 //李小鹏
 #include <stdio.h>
 int main() {
-    int in,i;
-    scanf("%d", &in);
-    if (in > 50 || in < 1 )
+    int a, b, sum;
+    int mtx[3][3];
+    for (int i = 0; i < 3; i++)
     {
-        return 1;
-    }
-    else{
-        if (in == 1) {
-            printf("密钥不安全，请重新输入\n");
-            return 0;
-        }
-        int is_prime = 1;
-        for ( i = 2; i * i <= in; i++)
+        for (int j = 0; j < 3; j++)
         {
-            if (in % i == 0)
+            scanf("%d", &mtx[i][j]);
+        }
+    }
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            
+            if (j < 2)
             {
-                is_prime = 0;
-                break;
+                printf("%d ", mtx[i][j]);
+            }
+            else
+            {
+                printf("%d", mtx[i][j]);
             }
         }
-        if (is_prime)
-        {
-            printf("密钥安全，密码设置成功\n");
-        }
-        else
-        {
-            printf("密钥不安全，请重新输入\n");
-        }
+        printf("\n");
     }
     
     
