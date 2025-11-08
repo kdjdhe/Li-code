@@ -2,24 +2,37 @@
 //qwertyuiop43796@outlook.com
 //李小鹏
 #include <stdio.h>
-
-int main() {
-    int record[5];  
-    int i;
-    for (i = 0; i < 4; i++) {
-        scanf("%d", &record[i]);
+void reverse_array(int arr[], int n) {
+    int start = 0;
+    int end = n - 1;
+    
+    while (start < end) {
+        int temp = arr[start];
+        arr[start] = arr[end];
+        arr[end] = temp;
+        start++;
+        end--;
     }
-    for (i = 4; i > 0; i--) {
-        record[i] = record[i - 1];
-    }
-    record[0] = 0;
-    for (i = 0; i < 5; i++) {
-        if (i > 0) {
+}
+void print_array(int arr[], int n) {
+    for (int i = 0; i < n; i++) {
+        printf("%d", arr[i]);
+        if (i < n - 1) {
             printf(" ");
         }
-        printf("%d", record[i]);
     }
     printf("\n");
+}
+
+int main() {
+    int arr[5];
+    for (int i = 0; i < 5; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
     
+    int length = 5;
+    reverse_array(arr, length);
+    print_array(arr, length);
     return 0;
 }
