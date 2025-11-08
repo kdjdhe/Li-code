@@ -2,25 +2,33 @@
 //qwertyuiop43796@outlook.com
 //李小鹏
 #include <stdio.h>
-int main()
-{
-    int a,b,c,i;
-    int d = 0;
-    for ( i = 100; i <= 999; i++)
+int main() {
+    int a, b, sum;
+    int mtx[3][3];
+    for (int i = 0; i < 3; i++)
     {
-        a = i / 100;
-        b = (i/10)%10;
-        c = i % 10;
-        if (a*a*a + b*b*b + c*c*c == i)
+        for (int j = 0; j < 3; j++)
         {
-            if (d >0)
-            {
-                printf(" ");
-            }
-            printf("%d",i);
-            d++;
+            scanf("%d", &mtx[i][j]);
         }
-        
     }
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            
+            if (j < 2)
+            {
+                printf("%d ", mtx[j][i]);
+            }
+            else
+            {
+                printf("%d", mtx[j][i]);
+            }
+        }
+        printf("\n");
+    }
+    
+    
     return 0;
 }
