@@ -2,37 +2,24 @@
 //qwertyuiop43796@outlook.com
 //李小鹏
 #include <stdio.h>
-void reverse_array(int arr[], int n) {
-    int start = 0;
-    int end = n - 1;
-    
-    while (start < end) {
-        int temp = arr[start];
-        arr[start] = arr[end];
-        arr[end] = temp;
-        start++;
-        end--;
-    }
+void swap(int *a, int *b) {
+   int temp = *a;
+   *a = *b;
+   *b = temp;
 }
-void print_array(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d", arr[i]);
-        if (i < n - 1) {
-            printf(" ");
-        }
-    }
-    printf("\n");
+void bubble_sort(int *arr, int len) {
+   for(int i=0; i<len-1; i++) {
+       for(int j=0; j<len-1-i; j++) {
+           if(*(arr+j) > *(arr+j+1)) {
+               swap(arr+j, arr+j+1);
+           }
+       }
+   }
 }
-
 int main() {
-    int arr[5];
-    for (int i = 0; i < 5; i++)
-    {
-        scanf("%d", &arr[i]);
-    }
-    
-    int length = 5;
-    reverse_array(arr, length);
-    print_array(arr, length);
-    return 0;
+   int arr[10];
+   for(int i=0; i<10; i++) scanf("%d", arr+i);
+   bubble_sort(arr, 10);
+   for(int i=0; i<10; i++) printf("%d ", *(arr+i));
+   return 0;
 }
