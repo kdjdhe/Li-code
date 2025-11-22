@@ -1,20 +1,23 @@
 //202510125218
 //qwertyuiop43796@outlook.com
 //李小鹏
-#include<stdio.h>
-int sum(int a1, int an,int step)
-{
-	int i = 0;
-	int result = 0;
-	for (i = a1; i <= an; i = i + step)
-	{
-		result += i;
-	}
-	return result;
+#include <stdio.h>
+void shiftArray(int *ptr_arr, int len) {
+    for (int i = len - 2; i >= 0; i--) {
+        *(ptr_arr + i + 1) = *(ptr_arr + i);
+    }
+    *ptr_arr = 0;
 }
-int main()
-{
-	int a = sum(1,100,1);
-	printf("%d", a);
-	return 0;
+int main() {
+    int arr[5];
+    for (int i = 0; i < 5; i++) {
+        scanf("%d", &arr[i]);
+    }
+    shiftArray(arr, 5);
+    for (int i = 0; i < 5; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
 }
+
